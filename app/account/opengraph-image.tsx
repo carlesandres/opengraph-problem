@@ -13,10 +13,6 @@ export const contentType = 'image/png';
 
 export default async function Image() {
 
-  const geistMonoVariable = fetch(
-    new URL('../../assets/GeistMonoVF.ttf', import.meta.url),
-  ).then((res) => res.arrayBuffer());
-
   return new ImageResponse(
     (
       <div
@@ -66,14 +62,6 @@ export default async function Image() {
     ),
     {
       ...size,
-      fonts: [
-        {
-          name: 'Geist',
-          data: await geistMonoVariable,
-          style: 'normal',
-          weight: 400,
-        },
-      ],
     },
   );
 }
